@@ -32,6 +32,8 @@
 	</repositories-->
 	<modules>
 		<module>schema</module>
+		<module>convert</module>
+		<module>full</module>
 		<!--module>core</module>
 		<module>api</module>
 		<module>dist</module-->
@@ -52,8 +54,8 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<jackson.version>2.7.4</jackson.version>
-		<!--spring-boot.version>1.4.2.RELEASE</spring-boot.version-->
+		<jackson.version>2.8.5</jackson.version>
+		<activation.version>1.2.0</activation.version>
 		<jaxb23.version>2.3.0</jaxb23.version>
 		<jaxb.version>${jaxb23.version}</jaxb.version>
 	</properties>
@@ -64,13 +66,37 @@
 				<artifactId>gpx-tools-schema</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>org.hisrc.gpx-tools</groupId>
+				<artifactId>gpx-tools-convert</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.activation</groupId>
+				<artifactId>javax.activation</artifactId>
+				<version>${activation.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.glassfish.jaxb</groupId>
 				<artifactId>jaxb-runtime</artifactId>
 				<version>${jaxb.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
 
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>args4j</groupId>
+				<artifactId>args4j</artifactId>
+				<version>2.33</version>
+			</dependency>
 
 			<!--dependency>
 				<groupId>org.slf4j</groupId>
@@ -158,6 +184,11 @@
 							<phase>generate-sources</phase>
 						</execution>
 					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>3.1.1</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
