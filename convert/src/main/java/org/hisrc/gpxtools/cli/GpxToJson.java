@@ -10,8 +10,8 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-import org.hisrc.gpxtools.gpx.model.WaypointFeatureCollection;
-import org.hisrc.gpxtools.gpx.service.GpxToWaypointFeatureCollectionConverter;
+import org.hisrc.gpxtools.feature.model.WaypointFeatureCollection;
+import org.hisrc.gpxtools.gpx.cut.GpxToWaypointFeatureCollectionConverter;
 import org.hisrc.gpxtools.gpx.v_1_1.GpxType;
 import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.CmdLineException;

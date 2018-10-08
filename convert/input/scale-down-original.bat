@@ -1,0 +1,1 @@
+ffmpeg -y -i 00.original.mp4 -vf scale=160:90 00.mp4

@@ -15,6 +15,10 @@
 			<artifactId>jaxb-runtime</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics-runtime</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.sun.activation</groupId>
 			<artifactId>javax.activation</artifactId>
 		</dependency>
@@ -50,6 +54,17 @@
 							</schemas>
 							<catalog>src/main/resources/catalog.xml</catalog>
 							<strict>false</strict>
+							<args>
+								<arg>-Xequals</arg>
+								<arg>-XhashCode</arg>
+								<arg>-Xcopyable</arg>
+							</args>
+							<plugins>
+								<plugin>
+									<groupId>org.jvnet.jaxb2_commons</groupId>
+									<artifactId>jaxb2-basics</artifactId>
+								</plugin>
+							</plugins>
 						</configuration>
 					</execution>
 				</executions>
